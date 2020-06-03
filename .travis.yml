@@ -1,21 +1,23 @@
 language: python
 matrix:
   include:
-    - python: 3.5
-    - python: 3.6
-    - python: 3.7
-    - python: 3.8
+  - python: 3.5
+  - python: 3.6
+  - python: 3.7
+  - python: 3.8
 before_install:
-  - curl -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.7.0-amd64.deb && sudo dpkg -i --force-confnew elasticsearch-7.7.0-amd64.deb
+- curl -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.7.0-amd64.deb
+  && sudo dpkg -i --force-confnew elasticsearch-7.7.0-amd64.deb
 before_script:
-  - sleep 10
+- sleep 10
 install:
-  - pip install pipenv
-  - pipenv install --dev --system
+- pip install pipenv
+- pipenv install --dev --system
 script: make test
 after_success:
-  - coveralls
+- coveralls
 deploy:
   provider: pypi
-  username: "omar.s"
-  password: "pypi-AgEIcHlwaS5vcmcCJGFmMWIwODNmLTQ4ZDktNGEyZi04ZjA2LTA2YTI3ZGRmNzJlZgACJXsicGVybWlzc2lvbnMiOiAidXNlciIsICJ2ZXJzaW9uIjogMX0AAAYgM2o3jc_1gX3WtjSyxX-bPsgDlpt7kZlg5be6ixbFV9Y"
+  username: __token__
+  password:
+    secure: Pgfeg8suhuai2teGQj2wn78IYy8QUb8TF9K58o1pncB0AdDIsfHQfYClOxqt/cYMlgJmutQMMr4MXwxT1dpvRLtx1xW8MfRAbu3zUe27fJKak1VhQNN/ctL/TnDBVWaw/TvHtXS0LwCKGdIYSdEaWnfMt3L2/0VurQMus0ZJ9/vJPUPdied00eAzkeWnJDTa9p/vvONFewHXEiQeV8UjldZThlEXxnp9ZA5orbHtjF0K5XeKxeOeFqPESVvJBqVs5Q7DHJmoJL0Jkm18wXbGBcxsRABtPWg+csSWGdY6glBKEQXvIqPhQrNKW78hT8gNhR1skb3oGcrr+5Iqg+44IgNHHqRi/1v2O7S6y9pxi2DE5cnG1khAUNIsX7KhkQ1S2a1uJXO7ep6x0SVhH6Ujkg8t8dF4DP64HUgvi47lImfT/P3RtDt4aswLjXGitpsQsrfAqSl1npd3jx0GWNYMZRB6EoJHtTgOwR+A074wrGjXQce33/lMnujIH68KuNhVyVe6H7P7fF0Geh5MrGWbtVR+YOxhnV6vB33sncpLGrWMiuvGZgaliJChmyZ62cfoOtw/OYeEr6rZMpE86GrYnyNm5flHVd59EuQVK1qDlkY4WfNsvl/bltfzXZXV6/J/pcqBwLhn0AGHzChrywf1lPYXCQI48MIiJCeOJpPd9cQ=

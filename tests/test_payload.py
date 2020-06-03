@@ -1,4 +1,4 @@
-from toute.utils import Payload, Filter, Query
+from toute.utils.payload import Payload, Filter, Query
 
 
 def test_query_must_not_by_ids():

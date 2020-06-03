@@ -152,7 +152,7 @@ class Pagination(object):
                     (
                         num > self.page - left_current - 1  # noqa
                         and num < self.page + right_current  # noqa
-                    ) or num > self.pages - right_edge:
+                    ) or num > self.pages - right_edge:  # noqa
                 if last + 1 != num:
                     yield None
                 yield num

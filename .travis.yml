@@ -1,11 +1,16 @@
 language: python
+matrix:
+  include:
+    - python: 2.7
+    - python: 3.6
+    - python: 3.7
+    - python: 3.8
+    dist: xenial
+    sudo: true
 before_install:
   - curl -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.7.0-amd64.deb && sudo dpkg -i --force-confnew elasticsearch-7.7.0-amd64.deb
 before_script:
   - sleep 10
-python:
-  - "2.7"
-services: elasticsearch
 install:
   - "pip install --upgrade -r test.req"
   - make install

@@ -679,3 +679,6 @@ toute is OpenSource! join us!
 <a href="http://smallactsmanifesto.org" title="Small Acts Manifesto"><img src="http://smallactsmanifesto.org/static/images/smallacts-badge-80x15-blue.png" style="border: none;" alt="Small Acts Manifesto" /></a>
 
 **MADE WITH #LOVE AND #PYTHON
+
+# Credits
+<a href='https://www.freepik.com/free-photos-vectors/background'>vector created by frimufilms - www.freepik.com</a>

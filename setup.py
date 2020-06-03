@@ -37,7 +37,7 @@ setup(
     url='https://github.com/eshta/toute',
     license='MIT',
     author="Omar Shaban",
-    author_email="o.shaban.000@gmail.con",
+    author_email="omars@php.net",
     description='ElasticSearch ODM inspired by MongoEngine',
     long_description=long_description,
     packages=find_packages("lib"),

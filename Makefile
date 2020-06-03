@@ -1,13 +1,13 @@
 .PHONY: test install pep8 release clean doc
 
 test: pep8
-	py.test -v --cov=esengine -l --tb=short --maxfail=1 tests/ -vv
+	py.test -v --cov=toute -l --tb=short --maxfail=1 tests/ -vv
 
 install:
 	python setup.py develop
 
 pep8:
-	@flake8 esengine --ignore=F403 --ignore F821
+	@flake8 toute --ignore=F403 --ignore F821
 
 release: test
 	@python setup.py sdist bdist_wheel upload
@@ -19,9 +19,9 @@ clean:
 
 epydoc:
 	@git up && git checkout master
-	@epydoc --html esengine -o /tmp/esengine_docs
+	@epydoc --html toute -o /tmp/toute_docs
 	@git checkout gh-pages
-	@cp -r /tmp/esengine_docs docs
+	@cp -r /tmp/toute_docs docs
 	@git add docs/
 	@git commit -am"updated docs"
 	@git push -u origin gh-pages

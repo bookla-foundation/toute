@@ -11,7 +11,7 @@ try:
     import pypandoc
     long_description = pypandoc.convert('README.md', 'rst')
 except (IOError, ImportError):
-    long_description = "ElasticSearch ODM inspired by MongoEngine"
+    long_description = "ElasticSearch ODM inspired by MongoEngine, for docs please visit the homepage."
 
 
 def fpath(name):
@@ -29,7 +29,6 @@ def grep(attrname):
     pattern = r"{0}\W*=\W*'([^']+)'".format(attrname)
     strval, = re.findall(pattern, file_text)
     return strval
-
 
 setup(
     name='toute',

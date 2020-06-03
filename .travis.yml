@@ -1,6 +1,6 @@
 language: python
 before_install:
-  - curl -O https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.3.deb && sudo dpkg -i --force-confnew elasticsearch-1.7.3.deb
+  - curl -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.7.0-amd64.deb && sudo dpkg -i --force-confnew elasticsearch-7.7.0-amd64.deb
 before_script:
   - sleep 10
 python:

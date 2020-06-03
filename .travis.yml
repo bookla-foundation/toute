@@ -11,8 +11,8 @@ before_install:
 before_script:
   - sleep 10
 install:
-  - "pip install --upgrade -r test.req"
-  - make install
-script: make test-ci
+  - pip install pipenv
+  - pipenv install --dev --system
+script: make test
 after_success:
   - coveralls

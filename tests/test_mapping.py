@@ -3,6 +3,7 @@ from toute import (
     IntegerField, LongField, KeywordField, FloatField,
     DateField, BooleanField, GeoPointField
 )
+import json
 
 
 class BaseDoc(Document):
@@ -35,35 +36,18 @@ class DocDate(Doc):
 
 
 def test_mapping():
-
     mapping = Mapping(Doc)
-
-    assert mapping.generate() == {
-        'doc_type': {
-            '_all': {'enabled': True},
-            'properties': {
-                'booleanfield': {'type': 'boolean'},
-                'datefield': {
-                    'type': 'date'
-                },
-                'floatfield': {'type': 'float'},
-                'geopointfield': {'type': 'geo_point'},
-                'integerfield': {'type': 'integer'},
-                'longfield': {'type': 'long'},
-                'KeywordField': {
-                    "index": "analyzed",
-                    "store": "yes",
-                    'type': 'string'
-                }
-            }
-        }
-    }
+    print(mapping.generate())
+    assert mapping.generate() == {'doc_type': {
+        'properties': {'integerfield': {'type': 'integer'}, 'longfield': {'type': 'long'},
+                       'KeywordField': {'index': 'true', 'store': 'true', 'type': 'keyword'},
+                       'floatfield': {'type': 'float'}, 'datefield': {'type': 'date'},
+                       'booleanfield': {'type': 'boolean'}, 'geopointfield': {'type': 'geo_point'}}}}
 
 
 def test_change_format():
-    mapping = Mapping(DocDate, enable_all=False).generate()
+    mapping = Mapping(DocDate).generate()
     pattern = 'yyyy-MM-dd||epoch_millis'
-    assert mapping['doc_type']['_all']['enabled'] is False
     assert mapping['doc_type']['properties']['datefield']['format'] == pattern
 
 
@@ -107,41 +91,57 @@ def test_configure():
     }
     mapping.configure(models, settings, es)
     expected_mappings = {
-        'doc_type': {
-            '_all': {'enabled': True},
-            'properties': {
-                'booleanfield': {'type': 'boolean'},
-                'datefield': {
-                    'type': 'date'
+        "doc_type": {
+            "properties": {
+                "KeywordField": {
+                    "index": "true",
+                    "store": "true",
+                    "type": "keyword"
                 },
-                'floatfield': {'type': 'float'},
-                'geopointfield': {'type': 'geo_point'},
-                'integerfield': {'type': 'integer'},
-                'longfield': {'type': 'long'},
-                'KeywordField': {
-                    "index": "analyzed",
-                    "store": "yes",
-                    'type': 'string'
+                "booleanfield": {
+                    "type": "boolean"
+                },
+                "datefield": {
+                    "type": "date"
+                },
+                "floatfield": {
+                    "type": "float"
+                },
+                "geopointfield": {
+                    "type": "geo_point"
+                },
+                "integerfield": {
+                    "type": "integer"
+                },
+                "longfield": {
+                    "type": "long"
                 }
             }
         },
-        'doc_type1': {
-            '_all': {'enabled': True},
-            'properties': {
-                'integerfield': {'type': 'integer'},
+        "doc_type1": {
+            "properties": {
+                "integerfield": {
+                    "type": "integer"
+                }
             }
         }
     }
     expected_output = {
+        "settings": settings,
         "mappings": expected_mappings,
-        "settings": settings
     }
-    assert es.indices.create_return['index'] == expected_output
+    expected_output = json.dumps(expected_output, sort_keys=True, indent=2)
+    actual_output = es.indices.create_return['index']
+    actual_output = json.dumps(actual_output, sort_keys=True, indent=2)
+    print(actual_output)
+    assert expected_output == actual_output
 
 
 class ESMock(object):
-
     class Indice(object):
+        def __init__(self):
+            self.create_return = {}
+
         exists_ret = False
 
         def exists(self, *args, **kwargs):
@@ -151,7 +151,6 @@ class ESMock(object):
             try:
                 self.create_return[index] = body
             except:
-                self.create_return = {}
                 self.create_return[index] = body
 
     indices = Indice()

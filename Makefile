@@ -1,13 +1,16 @@
 .PHONY: test install pep8 release clean doc
 
-test: pep8
+test: install
+	pipenv run python -m pytest -v --cov=toute -l --tb=short --maxfail=1 tests/ -vv
+
+test-ci: pep8
 	py.test -v --cov=toute -l --tb=short --maxfail=1 tests/ -vv
 
 install:
-	python setup.py develop
+	pipenv run python setup.py develop
 
 pep8:
-	@flake8 lib/toute --ignore=F403 --ignore F821 --ignore W504
+	@flake8 lib/toute --ignore W504 --ignore=F403 --ignore F821 --ignore F405
 
 release: test
 	@python setup.py sdist bdist_wheel upload

@@ -9,6 +9,6 @@ services: elasticsearch
 install:
   - "pip install --upgrade -r test.req"
   - make install
-script: make test
+script: make test-ci
 after_success:
   - coveralls

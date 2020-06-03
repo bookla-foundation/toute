@@ -9,7 +9,8 @@ from toute.utils.validation import FieldValidator
 
 __all__ = [
     'IntegerField', 'LongField', 'KeywordField', 'FloatField',
-    'DateField', 'UuidField', 'BooleanField', 'GeoPointField', 'ArrayField', 'ObjectField'
+    'DateField', 'UuidField', 'BooleanField', 'GeoPointField',
+    'ArrayField', 'ObjectField'
 ]
 
 

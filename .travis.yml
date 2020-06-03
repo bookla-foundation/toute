@@ -15,3 +15,7 @@ install:
 script: make test
 after_success:
   - coveralls
+deploy:
+  provider: pypi
+  username: "omar.s"
+  password: "pypi-AgEIcHlwaS5vcmcCJGFmMWIwODNmLTQ4ZDktNGEyZi04ZjA2LTA2YTI3ZGRmNzJlZgACJXsicGVybWlzc2lvbnMiOiAidXNlciIsICJ2ZXJzaW9uIjogMX0AAAYgM2o3jc_1gX3WtjSyxX-bPsgDlpt7kZlg5be6ixbFV9Y"

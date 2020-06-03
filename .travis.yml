@@ -8,6 +8,7 @@ python:
 services: elasticsearch
 install:
   - "pip install --upgrade -r test.req"
+  - make install
 script: make test
 after_success:
   - coveralls

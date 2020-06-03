@@ -11,5 +11,3 @@ install:
 script: make test
 after_success:
   - coveralls
-notifications:
-  slack: catholabs:9yCjbY6Jgn3Xdy9hwq6PyLEJ

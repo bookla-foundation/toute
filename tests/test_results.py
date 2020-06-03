@@ -1,5 +1,5 @@
-from toute.bases import ResultSet
-from toute.bases import HITS
+from toute.bases.result import ResultSet
+from toute.bases.result import HITS
 
 
 def test_resultset_has_values(MockES, INDEX, DOC_TYPE, Doc):

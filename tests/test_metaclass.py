@@ -1,5 +1,5 @@
-from toute.bases import ModelMetaclass
-from toute.bases import BaseField
+from toute.bases.metaclass import ModelMetaclass
+from toute.bases.field import BaseField
 from toute.embedded_document import EmbeddedDocument
 
 from six import with_metaclass

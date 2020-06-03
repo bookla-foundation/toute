@@ -246,7 +246,7 @@ def test_array_field():
         datetime.strptime(example["date_array"][1], "%Y-%m-%d")
     ]
     assert doc.date_array == dates
-    assert doc.long_array == [long(x) for x in example["long_array"]]
+    assert doc.long_array == [int(x) for x in example["long_array"]]
     assert doc.str_array == example["str_array"]
     assert doc.empyt_array == example["empyt_array"]
 

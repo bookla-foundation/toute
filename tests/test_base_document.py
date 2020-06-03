@@ -1,7 +1,7 @@
 import pytest
 from toute.bases import *  # noqa
-from toute.bases import BaseDocument
-from toute.bases import BaseField
+from toute.bases.document import BaseDocument
+from toute.bases.field import BaseField
 from toute.fields import KeywordField, IntegerField
 
 from toute.exceptions import FieldTypeMismatch
@@ -56,7 +56,7 @@ def test_doc_set_kwargs():
 
         def __setattr__(self, key, value):
             if key not in self._fields:
-                if isinstance(value, basestring):
+                if isinstance(value, str):
                     self._fields[key] = KeywordField()
                 elif isinstance(value, int):
                     self._fields[key] = IntegerField()

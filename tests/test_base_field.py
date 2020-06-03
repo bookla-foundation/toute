@@ -1,6 +1,6 @@
 import pytest
 
-from toute.bases import BaseField
+from toute.bases.field import BaseField
 
 from toute.exceptions import RequiredField, InvalidMultiField
 from toute.exceptions import FieldTypeMismatch

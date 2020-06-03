@@ -21,8 +21,8 @@ def fpath(name):
 def read(fname):
     return open(fpath(fname)).read()
 
-# grep eseengine/__init__.py since python 3.x cannot import it
-file_text = read(fpath('toute/__init__.py'))
+# grep toute/__init__.py since python 3.x cannot import it
+file_text = read(fpath('lib/toute/__init__.py'))
 
 
 def grep(attrname):

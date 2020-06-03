@@ -5,6 +5,7 @@ six==1.10.0
 
 # testing
 coveralls
+pyyaml
 pytest==2.8.3
 pytest-cov==2.2.0
 

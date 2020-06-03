@@ -11,6 +11,7 @@ elasticsearch = "==7.7.0"
 pytest-cov = "*"
 toute = {editable = true,path = "."}
 more-itertools = "==5.0.0"
+zipp = "==1.2.0"
 
 [requires]
 python_version = "3.7"

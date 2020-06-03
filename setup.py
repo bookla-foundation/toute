@@ -32,7 +32,7 @@ def grep(attrname):
 
 setup(
     name='toute',
-    version=grep('__version__'),
+    version="0.2.0",
     url='https://github.com/eshta/toute',
     license='MIT',
     author="Omar Shaban",

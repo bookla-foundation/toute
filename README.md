@@ -8,7 +8,7 @@
 [![versions](https://img.shields.io/pypi/pyversions/toute.svg)](https://pypi.python.org/pypi/toute)
 [![downloads](https://img.shields.io/pypi/dw/toute.svg)](https://pypi.python.org/pypi/toute)
 [![Travis CI](https://travis-ci.org/eshta/toute.svg?branch=master)](https://travis-ci.org/eshta/toute)
-[![Coverage Status](http://img.shields.io/coveralls/catholabs/toute.svg)](https://coveralls.io/r/eshta/toute)
+[![Coverage Status](https://coveralls.io/repos/github/eshta/toute/badge.svg)](https://coveralls.io/github/eshta/toute)
 [![Code Health](https://landscape.io/github/catholabs/toute/master/landscape.svg?style=flat)](https://landscape.io/github/eshta/toute/master)
 
 

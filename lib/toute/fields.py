@@ -10,9 +10,12 @@ from toute.utils.validation import FieldValidator
 __all__ = [
     'IntegerField', 'LongField', 'KeywordField', 'FloatField',
     'DateField', 'UuidField', 'BooleanField', 'GeoPointField',
-    'ArrayField', 'ObjectField'
+    'ArrayField', 'ObjectField', 'TextField'
 ]
 
+class TextField(BaseField):
+    _type = unicode
+    _default_mapping = {"index": "true", "store": "true", 'type': 'text'}
 
 class IntegerField(BaseField):
     _type = int

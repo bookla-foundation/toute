@@ -124,6 +124,7 @@ weight = FloatField()
 factor = LongField()
 active = BooleanField()
 birthday = DateField()
+description = TextField()
 ```
 
 ### Special Fields

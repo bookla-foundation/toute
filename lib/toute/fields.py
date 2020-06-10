@@ -8,23 +8,29 @@ from toute.exceptions import ValidationError, FieldTypeMismatch
 from toute.utils.validation import FieldValidator
 
 __all__ = [
-    'IntegerField', 'LongField', 'KeywordField', 'FloatField',
+    'IntegerField', 'LongField', 'ShortField', 'KeywordField', 'FloatField',
     'DateField', 'UuidField', 'BooleanField', 'GeoPointField',
     'ArrayField', 'ObjectField', 'TextField'
 ]
+
 
 class TextField(BaseField):
     _type = unicode
     _default_mapping = {"index": "true", "store": "true", 'type': 'text'}
 
+
 class IntegerField(BaseField):
     _type = int
     _default_mapping = {'type': 'integer'}
 
-
 class LongField(BaseField):
     _type = long
     _default_mapping = {'type': 'long'}
+
+
+class ShortField(BaseField):
+    _type = int
+    _default_mapping = {'type': 'short'}
 
 
 class UuidField(BaseField):

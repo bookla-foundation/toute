@@ -1,5 +1,3 @@
-from decimal import Decimal, getcontext
-
 import pytest
 from toute.bases import *  # noqa
 from datetime import datetime
@@ -13,7 +11,6 @@ import sys
 
 
 def test_double_field():
-    getcontext().prec = 28
     double_field = DoubleField()
     assert {'type': 'double'} == double_field.__getattribute__('_default_mapping')
 

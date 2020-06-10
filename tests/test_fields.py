@@ -1,13 +1,21 @@
+from decimal import Decimal, getcontext
+
 import pytest
 from toute.bases import *  # noqa
 from datetime import datetime
 from toute import Document
 from toute.fields import (
-    DateField, GeoPointField, ArrayField, LongField, KeywordField
+    DateField, GeoPointField, ArrayField, LongField, KeywordField, DoubleField
 )
 from toute.exceptions import ValidationError, FieldTypeMismatch
 
 import sys
+
+
+def test_double_field():
+    getcontext().prec = 28
+    double_field = DoubleField()
+    assert {'type': 'double'} == double_field.__getattribute__('_default_mapping')
 
 
 def test_date_field_to_dict():

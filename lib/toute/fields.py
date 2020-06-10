@@ -1,4 +1,6 @@
 # coding: utf-8
+from decimal import Decimal
+
 from toute.bases.py3 import *  # noqa
 from dateutil import parser
 from datetime import datetime
@@ -23,6 +25,7 @@ class IntegerField(BaseField):
     _type = int
     _default_mapping = {'type': 'integer'}
 
+
 class LongField(BaseField):
     _type = long
     _default_mapping = {'type': 'long'}
@@ -46,6 +49,11 @@ class KeywordField(BaseField):
 class FloatField(BaseField):
     _type = float
     _default_mapping = {'type': 'float'}
+
+
+class DoubleField(BaseField):
+    _type = Decimal
+    _default_mapping = {'type': 'double'}
 
 
 class BooleanField(BaseField):

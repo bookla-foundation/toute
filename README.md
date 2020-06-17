@@ -163,7 +163,7 @@ A field to hold nested one-dimension objects, schema-less or with properties val
 
 ```python
 # accepts only dictionaries having strct "street" and "number" keys
-address = ObjectField(properties={"street": "string", "number": "integer"})
+address = ObjectField(properties={"street": "text", "number": "integer"})
 
 # Accepts any Python dictionary
 extravalues = ObjectField() 
@@ -182,7 +182,7 @@ colors = KeywordField(multi=True)   # accepts ["blue", "green", "yellow", ....]
 But sometimes (specially for nested objects) it is better to be explicit, and also it generates a better mapping
 
 ```python
-# accepts an array of strings ["blue", "green", "yellow", ....]
+# accepts an array of keyword fields ["blue", "green", "yellow", ....]
 colors = ArrayField(KeywordField()) 
 ```
 
@@ -192,7 +192,7 @@ It is available for any other field
 locations = ArrayField(GeoPointField())
 numbers = ArrayField(IntegerField())
 fractions = ArrayField(FloatField())
-addresses = ArrayField(ObjectField(properties={"street": "string", "number": "integer"}))
+addresses = ArrayField(ObjectField(properties={"street": "keyword", "number": "integer"}))
 list_of_lists_of_strings = ArrayField(ArrayField(KeywordField()))
 ```
 

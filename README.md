@@ -232,8 +232,8 @@ in form of a Python dictionary.
 ```python
 query = {
     "query": {
-        "filtered": {
-            "query": {
+        "bool": {
+            "must": {
                 "match_all": {}
             },
             "filter": {
@@ -513,8 +513,8 @@ Sometimes queries turns in to complex and verbose data structures, to help you
 ```python
 query = {
     "query": {
-        "filtered": {
-            "query": {
+        "bool": {
+            "must": {
                 "match_all": {}
             },
             "filter": {

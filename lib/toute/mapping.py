@@ -19,9 +19,10 @@ class Mapping(object):
     operation must be done at elasticsearch index creation.
 
     """
-    def __init__(self, document_class=None, enable_all=True):
+    def __init__(self, document_class=None, enable_all=True, include_type_name=True):
         self.document_class = document_class
         self.enable_all = enable_all
+        self.include_type_name = include_type_name
 
     def _generate(self, doc_class):
         """
@@ -58,7 +59,7 @@ class Mapping(object):
             return es.indices.create(
                 index=self.document_class._index,
                 body={"mappings": self.generate()},
-                params={"include_type_name": "true"}
+                params={"include_type_name": "true"} if self.include_type_name else {}
             )
 
     def build_configuration(self, models_to_mapping, custom_settings, es=None):

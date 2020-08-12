@@ -533,7 +533,7 @@ Person.search(query=query, size=10)
 
 ```python
 from toute import Payload, Query, Filter
-payload = Payload(query=Query.filtered(query=Query.match_all(), filter=Filter.ids([1, 2])))
+payload = Payload(query=Query.bool(must=[Query.match_all()], filter=Filter.ids([1, 2])))
 Person.search(payload, size=10)
 ```
 
@@ -545,7 +545,7 @@ You can also set model on payload initialization to create a more complete paylo
 from toute import Payload, Query, Filter
 payload = Payload(
     model=Person,
-    query=Query.filtered(query=Query.match_all(), filter=Filter.ids([1, 2]))
+    query=Query.bool(must=[Query.match_all()], filter=Filter.ids([1, 2]))
     sort={"name": {"order": "desc"}},
     size=10
 )

@@ -257,8 +257,8 @@ class Document(with_metaclass(ModelMetaclass, BaseDocument)):
 
         >>> query = {
         ...     "query": {
-        ...         "filtered": {
-        ...             "query": {"match_all": {}},
+        ...         "bool": {
+        ...             "must": {"match_all": {}},
         ...             "filter": {"exists": {"field": "name"}}
         ...         }
         ...     }
@@ -310,8 +310,8 @@ class Document(with_metaclass(ModelMetaclass, BaseDocument)):
         if ids:
             query = {
                 "query": {
-                    "filtered": {
-                        "query": {"match_all": {}},
+                    "bool": {
+                        "must": {"match_all": {}},
                         "filter": {"ids": {"values": list(ids)}}
                     }
                 }

@@ -12,7 +12,7 @@ from toute.utils.validation import FieldValidator
 __all__ = [
     'IntegerField', 'LongField', 'ShortField', 'KeywordField', 'FloatField',
     'DateField', 'UuidField', 'BooleanField', 'GeoPointField',
-    'ArrayField', 'ObjectField', 'TextField'
+    'ArrayField', 'ObjectField', 'TextField', 'DoubleField'
 ]
 
 

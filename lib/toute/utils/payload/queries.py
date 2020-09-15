@@ -13,7 +13,7 @@ QUERIES = {
         'args': ({'fields': []}, 'query')
     },
     'bool': {
-        'kwargs': ({('must', 'must_not', 'should'): ['_query']},)
+        'kwargs': ({('must', 'must_not', 'should'): ['_query'], 'filter': '_filter'},)
     },
     'boost': {
         'kwargs': ({('positive', 'negative'): '_query'})

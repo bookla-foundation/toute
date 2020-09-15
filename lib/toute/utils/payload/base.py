@@ -93,13 +93,13 @@ class Payload(object):
 
     def as_dict(self):
         if self._filter and self._query:
-            self._struct['query'] = Query.filtered(
+            self._struct['query'] = Query.bool(
                 filter=self._filter,
-                query=self._query
+                must=self._query
             )
 
         elif self._filter:
-            self._struct['query'] = Query.filtered(
+            self._struct['query'] = Query.bool(
                 filter=self._filter
             )
 

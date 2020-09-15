@@ -28,7 +28,7 @@ def test_query_must_not_by_ids():
 def test_filter_must_terms_must_not_ids():
     raw_query = {
         'query': {
-            'filtered': {
+            'bool': {
                 'filter': {
                     'bool': {
                         'must': [

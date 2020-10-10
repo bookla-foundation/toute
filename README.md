@@ -682,4 +682,4 @@ toute is OpenSource! join us!
 **MADE WITH #LOVE AND #PYTHON
 
 # Credits
-<a href='https://www.freepik.com/free-photos-vectors/background'>vector created by frimufilms - www.freepik.com</a>
+<a href='https://www.freepik.com/free-photos-vectors/background'>vector created by frimufilms</a>

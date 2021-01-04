@@ -1,5 +1,5 @@
 
-<img src="https://raw.githubusercontent.com/eshta/toute/master/docs/res/toute.png" align="left" height="200px"/>
+<img src="https://raw.githubusercontent.com/bookla-foundation/toute/master/docs/res/toute.png" align="left" height="200px"/>
 <img align="left" width="0" height="192px" hspace="10"/>
 
 > **toute** - **E**lastic**S**earch **O**bject **D**ocument **M**apper
@@ -7,9 +7,9 @@
 [![PyPI](https://img.shields.io/pypi/v/toute.svg)](https://pypi.python.org/pypi/toute)
 [![versions](https://img.shields.io/pypi/pyversions/toute.svg)](https://pypi.python.org/pypi/toute)
 [![downloads](https://img.shields.io/pypi/dw/toute.svg)](https://pypi.python.org/pypi/toute)
-[![Travis CI](https://travis-ci.org/eshta/toute.svg?branch=master)](https://travis-ci.org/eshta/toute)
-[![Coverage Status](https://coveralls.io/repos/github/eshta/toute/badge.svg)](https://coveralls.io/github/eshta/toute)
-[![Code Health](https://landscape.io/github/catholabs/toute/master/landscape.svg?style=flat)](https://landscape.io/github/eshta/toute/master)
+[![Travis CI](https://travis-ci.org/bookla-foundation/toute.svg?branch=master)](https://travis-ci.org/bookla-foundation/toute)
+[![Coverage Status](https://coveralls.io/repos/github/bookla-foundation/toute/badge.svg)](https://coveralls.io/github/bookla-foundation/toute)
+[![Code Health](https://landscape.io/github/catholabs/toute/master/landscape.svg?style=flat)](https://landscape.io/github/bookla-foundation/toute/master)
 
 
 **Toute** is an ODM (**O**bject **D**ocument **M**apper) it maps Python classes in to **E**lastic**S**earch **index/doc_type** and **object instances()** in to Elasticsearch documents.

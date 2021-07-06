@@ -1,10 +1,10 @@
 language: python
 matrix:
   include:
-  - python: 3.5
   - python: 3.6
   - python: 3.7
   - python: 3.8
+  - python: 3.9
 before_install:
 - curl -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.7.0-amd64.deb
   && sudo dpkg -i --force-confnew elasticsearch-7.7.0-amd64.deb

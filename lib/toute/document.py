@@ -55,7 +55,7 @@ class Document(with_metaclass(ModelMetaclass, BaseDocument)):
         This proxy-method allows the client overwrite
         and the use of a default client for a document.
         Document transport methods should use cls.get_es(es).method()
-        This method also validades that the connection is a valid ES client.
+        This method also validates that the connection is a valid ES client.
 
         :param es: The Es client or None
         :return: elasticsearch.ElasticSearch() instance or equivalent client

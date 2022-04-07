@@ -132,7 +132,11 @@ class Mapping(object):
                 es
             )
             for index, settings in configurations.items():
-                es.indices.create(index=index, body=settings)
+                es.indices.create(
+                    index=index,
+                    body=settings,
+                    params={"include_type_name": "true"} if self.include_type_name else {}
+                )
         else:
             mapped_models = [x for x in models_to_mapping]
             for model in mapped_models:
